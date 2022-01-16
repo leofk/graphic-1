@@ -15,9 +15,4 @@ void main() {
 	if (orbDistance <= minDistance)
 		gl_FragColor.g += 10.0;
 
-//
-//	if (orbDistance > minDistance)
-//		gl_FragColor = vec4(vcolor, vcolor, vcolor, 1.0);
-//	else
-//		gl_FragColor = vec4(vcolor, 1.0, vcolor, 1.0);
 }

@@ -11,6 +11,7 @@ void main() {
     // Q1C:
     // HINT: GLSL PROVIDES THE DOT() FUNCTION 
   	// HINT: SHADING IS CALCULATED BY TAKING THE DOT PRODUCT OF THE NORMAL AND LIGHT DIRECTION VECTORS
+
     vec4 armModelPos = modelMatrix * vec4(position, 1.0);
     vec3 lightDir = normalize(orbPosition - armModelPos.xyz);
     vec3 vnormal = normalize((modelMatrix * vec4(normal, 0.0)).xyz);
@@ -21,7 +22,7 @@ void main() {
     // HINT: Compute distance in World coordinate to make the magnitude easier to interpret
     // HINT: GLSL has a build-in distance() function
 
-    orbDistance = distance(armModelPos.xyz, orbPosition); // REPLACE ME
+    orbDistance = distance(armModelPos.xyz, orbPosition);
 
     gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
 }
