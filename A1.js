@@ -82,22 +82,22 @@ function checkKeyboard() {
   //       rotate
 
   if (keyboard.pressed("w")) // slide armadillo forwards
-    armadilloFrame.position.z += 1
+    armadilloFrame.position.z += 0.2
 
   if (keyboard.pressed("a")) // slide armadillo left
-    armadilloFrame.position.x += 1
+    armadilloFrame.position.x += 0.2
 
   if (keyboard.pressed("s")) // slide armadillo backwards
-    armadilloFrame.position.z -= 1
+    armadilloFrame.position.z -= 0.2
 
   if (keyboard.pressed("d")) // slide armadillo right
-    armadilloFrame.position.x -= 1
+    armadilloFrame.position.x -= 0.2
 
   if (keyboard.pressed("e")) // rotate clockwise
-    armadilloFrame.rotation.y -= Math.PI/10
+    armadilloFrame.rotation.y -= Math.PI/90
 
   if (keyboard.pressed("q")) // rotate counterclockwise
-    armadilloFrame.rotation.y += Math.PI/10
+    armadilloFrame.rotation.y += Math.PI/90
 
   // The following tells three.js that some uniforms might have changed
   armadilloMaterial.needsUpdate = true;

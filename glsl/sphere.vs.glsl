@@ -1,13 +1,14 @@
 // The uniform variable is set up in the javascript code and the same for all vertices
 uniform vec3 orbPosition;
 
-varying vec3 vNormal;
+out vec3 vnormal;
 
 void main() {
 
     // HINT: Q1b, Interpolate the normals here for the fragment shader
 
-    vNormal = normal;
+    vnormal = normal;
+//  vnormal = normalize(normal) * 0.5 + 0.5;
 
     // Multiply each vertex by the model matrix to get the world position of each vertex, 
     // then the view matrix to get the position in the camera coordinate system, 
