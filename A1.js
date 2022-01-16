@@ -80,8 +80,24 @@ function checkKeyboard() {
   // HINT: Q1a use this template to add the required keyboard functionality
   // HINT: we suggest you map "WASD" keys to translate the armadillo and "QE" keys to 
   //       rotate
-  if (keyboard.pressed("space"))
-    console.log("spacebar pressed")
+
+  if (keyboard.pressed("w")) // slide armadillo forwards
+    armadilloFrame.position.z += 1
+
+  if (keyboard.pressed("a")) // slide armadillo left
+    armadilloFrame.position.x += 1
+
+  if (keyboard.pressed("s")) // slide armadillo backwards
+    armadilloFrame.position.z -= 1
+
+  if (keyboard.pressed("d")) // slide armadillo right
+    armadilloFrame.position.x -= 1
+
+  if (keyboard.pressed("q")) // rotate clockwise
+    armadilloFrame.rotation.y -= Math.PI/10
+
+  if (keyboard.pressed("e")) // rotate counterclockwise
+    armadilloFrame.rotation.y += Math.PI/10
 
   // The following tells three.js that some uniforms might have changed
   armadilloMaterial.needsUpdate = true;
