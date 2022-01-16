@@ -93,10 +93,10 @@ function checkKeyboard() {
   if (keyboard.pressed("d")) // slide armadillo right
     armadilloFrame.position.x -= 1
 
-  if (keyboard.pressed("q")) // rotate clockwise
+  if (keyboard.pressed("e")) // rotate clockwise
     armadilloFrame.rotation.y -= Math.PI/10
 
-  if (keyboard.pressed("e")) // rotate counterclockwise
+  if (keyboard.pressed("q")) // rotate counterclockwise
     armadilloFrame.rotation.y += Math.PI/10
 
   // The following tells three.js that some uniforms might have changed
