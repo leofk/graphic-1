@@ -2,9 +2,7 @@
 
 Leo Foord-Kelcey
 
-CWL: leofk
-Student #: 83974592
-CS ID: a4h2b
+CWL: leofk | Student #: 83974592 | CS ID: a4h2b
 
 Keybinds:
 - W: Armadillo moves _forwards_ relative to it's initial orientation.
