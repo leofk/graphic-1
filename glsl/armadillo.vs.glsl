@@ -20,7 +20,8 @@ void main() {
     // Q1D:
     // HINT: Compute distance in World coordinate to make the magnitude easier to interpret
     // HINT: GLSL has a build-in distance() function
-    orbDistance = 1.0;// REPLACE ME
+
+    orbDistance = distance(armModelPos.xyz, orbPosition); // REPLACE ME
 
     gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
 }
