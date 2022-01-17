@@ -22,10 +22,11 @@ void main() {
     float l2 = length(lightDir);
 
     vcolor = max(dot / (l1 * l2), 0.0);
-//
-//    vec3 lightDir = normalize(orbPosition - armModelPos.xyz);
-//    vec3 vnormal = normalize((modelMatrix * vec4(normal, 0.0)).xyz);
-//    vcolor = dot(lightDir, vnormal);
+
+    // Solution 2: Use normalize
+//  vec3 lightDir = normalize(orbPosition - armModelPos.xyz);
+//  vec3 vnormal = normalize((modelMatrix * vec4(normal, 0.0)).xyz);
+//  vcolor = dot(lightDir, vnormal);
 
     // Q1D:
     // HINT: Compute distance in World coordinate to make the magnitude easier to interpret
