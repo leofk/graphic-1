@@ -81,23 +81,47 @@ function checkKeyboard() {
   // HINT: we suggest you map "WASD" keys to translate the armadillo and "QE" keys to 
   //       rotate
 
-  if (keyboard.pressed("w")) // slide armadillo forwards
-    armadilloFrame.position.z += 0.2
+  // Part 1: Default Movement?
+  // if (keyboard.pressed("w")) // slide armadillo forwards
+  //   armadilloFrame.position.z += 0.2
+  //
+  // if (keyboard.pressed("a")) // slide armadillo left
+  //   armadilloFrame.position.x += 0.2
+  //
+  // if (keyboard.pressed("s")) // slide armadillo backwards
+  //   armadilloFrame.position.z -= 0.2
+  //
+  // if (keyboard.pressed("d")) // slide armadillo right
+  //   armadilloFrame.position.x -= 0.2
+  //
+  // if (keyboard.pressed("e")) // rotate clockwise
+  //   armadilloFrame.rotation.y -= Math.PI/90
+  //
+  // if (keyboard.pressed("q")) // rotate counterclockwise
+  //   armadilloFrame.rotation.y += Math.PI/90
 
-  if (keyboard.pressed("a")) // slide armadillo left
-    armadilloFrame.position.x += 0.2
 
-  if (keyboard.pressed("s")) // slide armadillo backwards
-    armadilloFrame.position.z -= 0.2
+  // Part 2 Movement?
+  let speed = 0.2
 
-  if (keyboard.pressed("d")) // slide armadillo right
-    armadilloFrame.position.x -= 0.2
+  if (keyboard.pressed("shift"))
+    speed += 0.3
 
-  if (keyboard.pressed("e")) // rotate clockwise
-    armadilloFrame.rotation.y -= Math.PI/90
+  if (keyboard.pressed("w")) { // move forwards
+    armadilloFrame.position.z += speed * Math.cos(armadilloFrame.rotation.y)
+    armadilloFrame.position.x += speed * Math.sin(armadilloFrame.rotation.y)
+  }
 
-  if (keyboard.pressed("q")) // rotate counterclockwise
-    armadilloFrame.rotation.y += Math.PI/90
+  if (keyboard.pressed("s")) { // move backwards
+    armadilloFrame.position.z -= 0.2 * Math.cos(armadilloFrame.rotation.y)
+    armadilloFrame.position.x -= 0.2 * Math.sin(armadilloFrame.rotation.y)
+  }
+
+  if (keyboard.pressed("a"))  // turn counterclockwise
+    armadilloFrame.rotation.y += Math.PI/60
+
+  if (keyboard.pressed("d")) // turn clockwise
+    armadilloFrame.rotation.y -= Math.PI/60
 
   // The following tells three.js that some uniforms might have changed
   armadilloMaterial.needsUpdate = true;
