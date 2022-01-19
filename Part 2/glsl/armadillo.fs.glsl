@@ -7,8 +7,6 @@ in float orbDistance;
 float minDistance = 2.0;
 
 void main() {
- 	// HINT: For part C, set the color of the armadillo based on the vcolor
-	// HINT: For part D, only color it green within the proximity
 
 	gl_FragColor = vec4(vcolor, vcolor, vcolor, 1.0);
 

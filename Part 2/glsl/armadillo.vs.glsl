@@ -8,13 +8,8 @@ out float orbDistance;
 
 void main() {
 
-    // Q1C:
-    // HINT: GLSL PROVIDES THE DOT() FUNCTION 
-  	// HINT: SHADING IS CALCULATED BY TAKING THE DOT PRODUCT OF THE NORMAL AND LIGHT DIRECTION VECTORS
-
     vec4 armModelPos = modelMatrix * vec4(position, 1.0);
 
-    // Solution 1: Use Cos()
     vec3 lightDir = orbPosition - armModelPos.xyz;
     vec3 vnormal = (modelMatrix * vec4(normal, 0.0)).xyz;
 
@@ -23,15 +18,6 @@ void main() {
     float l2 = length(lightDir);
 
     vcolor = max(dot / (l1 * l2), 0.0);
-
-    // Solution 2: Use normalize
-//    vec3 lightDir = normalize(orbPosition - armModelPos.xyz);
-//    vec3 vnormal = normalize((modelMatrix * vec4(normal, 0.0)).xyz);
-//    vcolor = dot(lightDir, vnormal);
-
-    // Q1D:
-    // HINT: Compute distance in World coordinate to make the magnitude easier to interpret
-    // HINT: GLSL has a build-in distance() function
 
     orbDistance = distance(armModelPos.xyz, orbPosition);
 

@@ -81,7 +81,7 @@ function checkKeyboard() {
   // HINT: we suggest you map "WASD" keys to translate the armadillo and "QE" keys to 
   //       rotate
 
-  // Part 1: Default Movement?
+  // Basic Movement
   // if (keyboard.pressed("w")) // slide armadillo forwards
   //   armadilloFrame.position.z += 0.2
   //
@@ -101,7 +101,7 @@ function checkKeyboard() {
   //   armadilloFrame.rotation.y += Math.PI/90
 
 
-  // Part 2 Movement?
+  // Tighter Movement
   let speed = 0.2
 
   if (keyboard.pressed("shift"))

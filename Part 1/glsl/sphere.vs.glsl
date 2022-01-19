@@ -7,11 +7,7 @@ void main() {
 
     // HINT: Q1b, Interpolate the normals here for the fragment shader
 
-    // Solution 1
     vnormal = normal;
-
-    // Solution 2: Normalize normal
-//    vnormal = normalize(normal) * 0.5 + 0.5;
 
     // Multiply each vertex by the model matrix to get the world position of each vertex, 
     // then the view matrix to get the position in the camera coordinate system, 
