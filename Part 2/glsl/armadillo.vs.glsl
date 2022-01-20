@@ -8,17 +8,16 @@ out float orbDistance;
 
 void main() {
 
-    vec4 armModelPos = modelMatrix * vec4(position, 1.0);
+    vec4 orbPosTrans = inverse(modelMatrix) * vec4(orbPosition, 1.0);
+    vec3 lightDir = orbPosTrans.xyz - position;
 
-    vec3 lightDir = orbPosition - armModelPos.xyz;
-    vec3 vnormal = (modelMatrix * vec4(normal, 0.0)).xyz;
-
-    float dot = dot(vnormal, lightDir);
-    float l1 = length(vnormal);
+    float dot = dot(normal, lightDir);
+    float l1 = length(normal);
     float l2 = length(lightDir);
 
     vcolor = max(dot / (l1 * l2), 0.0);
 
+    vec4 armModelPos = modelMatrix * vec4(position, 1.0);
     orbDistance = distance(armModelPos.xyz, orbPosition);
 
     gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
