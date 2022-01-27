@@ -17,7 +17,7 @@ const {
 /////////////////////////////////
 const time = {type: 'float', value: 0}
 const armadilloFrame = new THREE.Object3D();
-armadilloFrame.position.set(0, 0, -8);
+armadilloFrame.position.set(0, 0, 0);
 scene.add(armadilloFrame);
 
 // Initialize uniform
@@ -56,8 +56,8 @@ new THREE.SourceLoader().load(shaderFiles, function (shaders) {
 // affects the loaded object.
 loadAndPlaceOBJ('obj/armadillo.obj', armadilloMaterial, armadilloFrame, function (armadillo) {
   armadillo.rotation.y = Math.PI;
-  armadillo.position.y = 5.3;
-  armadillo.scale.set(0.1, 0.1, 0.1);
+  armadillo.position.y = 2.0;
+  armadillo.scale.set(0.05, 0.05, 0.05);
 });
 
 
@@ -105,9 +105,21 @@ function checkKeyboard() {
 
 }
 
+let target = 10.0;
 // Setup update callback
-function update() {
-  checkKeyboard();
+function update(time) {
+  // checkKeyboard();
+  armadilloMaterial.needsUpdate = true;
+  sphereMaterial.needsUpdate = true;
+
+  // sphere.rotation.y = time * 0.003;
+  sphere.position.z = 5 * Math.cos(time * 0.0015);
+  sphere.position.x = 5 * Math.sin(time * 0.0015);
+  sphere.position.y = 2;
+
+  orbPosition.value.z = sphere.position.z;
+  orbPosition.value.x = sphere.position.x;
+  orbPosition.value.y = sphere.position.y;
 
   // Requests the next update call, this creates a loop
   requestAnimationFrame(update);
@@ -115,4 +127,6 @@ function update() {
 }
 
 // Start the animation loop.
-update();
+// update();
+requestAnimationFrame(update);
+

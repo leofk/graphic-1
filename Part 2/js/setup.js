@@ -19,7 +19,7 @@ function setup() {
 
     // Construct a THREEjs renderer from the canvas and context.
     const renderer = new THREE.WebGLRenderer({ canvas, context });
-    renderer.setClearColor(0X80CEE1); // blue background colour
+    renderer.setClearColor(0X000000); // blue background colour
     const scene = new THREE.Scene();
 
     // Set up the camera.
@@ -43,38 +43,38 @@ function setup() {
     resize();
 
     // World Coordinate Frame: other objects are defined with respect to it.
-    const worldFrame = new THREE.AxesHelper(1);
+    const worldFrame = new THREE.AxesHelper(0);
     scene.add(worldFrame);
 
-    // Diffuse texture map (this defines the main colors of the floor)
-    const floorDiff = new THREE.TextureLoader().load('images/cobblestone_floor_diff.jpg');
-    // Ambient occlusion map
-    const floorAo = new THREE.TextureLoader().load('images/cobblestone_floor_ao.jpg');
-    // Displacement map
-    const floorDisp = new THREE.TextureLoader().load('images/cobblestone_floor_disp.jpg');
-    // Normal map
-    const floorNorm = new THREE.TextureLoader().load('images/cobblestone_floor_nor.jpg');
-    // Roughness map
-    const floorRoughness = new THREE.TextureLoader().load('images/cobblestone_floor_rough.jpg');
-
-    const floorMaterial = new THREE.MeshStandardMaterial({
-        map: floorDiff,
-        aoMap: floorAo,
-        displacementMap: floorDisp,
-        normalMap: floorNorm,
-        roughnessMap: floorRoughness,
-        side: THREE.DoubleSide
-    });
-    const floorGeometry = new THREE.PlaneBufferGeometry(30.0, 30.0);
-    const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-    floor.rotation.x = -Math.PI / 2.0;
-    floor.position.y = -0.3;
-    scene.add(floor);
-    floor.parent = worldFrame;
-
-    // Cast a weak ambient light to make the floor visible.
-    const light = new THREE.AmbientLight(0xFFFFFF, 0.5);
-    scene.add(light);
+    // // Diffuse texture map (this defines the main colors of the floor)
+    // const floorDiff = new THREE.TextureLoader().load('images/cobblestone_floor_diff.jpg');
+    // // Ambient occlusion map
+    // const floorAo = new THREE.TextureLoader().load('images/cobblestone_floor_ao.jpg');
+    // // Displacement map
+    // const floorDisp = new THREE.TextureLoader().load('images/cobblestone_floor_disp.jpg');
+    // // Normal map
+    // const floorNorm = new THREE.TextureLoader().load('images/cobblestone_floor_nor.jpg');
+    // // Roughness map
+    // const floorRoughness = new THREE.TextureLoader().load('images/cobblestone_floor_rough.jpg');
+    //
+    // const floorMaterial = new THREE.MeshStandardMaterial({
+    //     map: floorDiff,
+    //     aoMap: floorAo,
+    //     displacementMap: floorDisp,
+    //     normalMap: floorNorm,
+    //     roughnessMap: floorRoughness,
+    //     side: THREE.DoubleSide
+    // });
+    // const floorGeometry = new THREE.PlaneBufferGeometry(30.0, 30.0);
+    // const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+    // floor.rotation.x = -Math.PI / 2.0;
+    // floor.position.y = -0.3;
+    // scene.add(floor);
+    // floor.parent = worldFrame;
+    //
+    // // Cast a weak ambient light to make the floor visible.
+    // const light = new THREE.AmbientLight(0xFFFFFF, 0.5);
+    // scene.add(light);
 
     return {
         renderer,
