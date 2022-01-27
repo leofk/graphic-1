@@ -13,4 +13,4 @@ Keybinds:
 
 Part 1: Solutions to Part 1 Questions.
 
-Part 2: Extends Part 1 to add unique features.
+Part 2: Currently nothing of note.

@@ -47,12 +47,6 @@ void main() {
 //
 //    vcolor = max(dot / (l1 * l2), 0.0);
 
-    // Solution 4: Use normalize?
-//    vec4 armModPos = modelMatrix * vec4(position, 1.0);
-//    vec3 lightDir = normalize(orbPosition - armModPos.xyz);
-//    vec3 vnormal = normalize((modelMatrix * vec4(normal, 0.0)).xyz);
-//    vcolor = dot(lightDir, vnormal);
-
     // Q1D:
     // HINT: Compute distance in World coordinate to make the magnitude easier to interpret
     // HINT: GLSL has a build-in distance() function
