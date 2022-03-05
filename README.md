@@ -1,5 +1,10 @@
 # For the First Time
 
+To Run Locally:
+- npx http-server ./[file directory] (on command line)
+- localhost:8080 (in browser)
+- open desired html file
+
 Keybinds:
 - W: Armadillo moves _forwards_ relative to its current orientation.
 - S: Armadillo moves _backwards_ relative to its current orientation.
