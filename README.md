@@ -1,4 +1,4 @@
-# For the First Time
+# For the First Time.
 
 Keybinds:
 - W: Armadillo moves _forwards_ relative to its current orientation.
