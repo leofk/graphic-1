@@ -1,8 +1,4 @@
-# CPSC 314 - Assignment 1
-
-Leo Foord-Kelcey
-
-CWL: leofk | Student #: 83974592 | CS ID: a4h2b
+# For the First Time
 
 Keybinds:
 - W: Armadillo moves _forwards_ relative to its current orientation.
