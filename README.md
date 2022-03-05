@@ -7,6 +7,3 @@ Keybinds:
 - D: Armadillo turns _clockwise_ relative to its current orientation.
 - Shift (hold): Armadillo increases _speed_ going forwards.
 
-Part 1: Solutions to Part 1 Questions.
-
-Part 2: Playing with a moving light source.
